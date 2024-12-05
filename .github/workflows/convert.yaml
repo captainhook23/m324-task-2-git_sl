@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Schritt 1: Repository klonen
+      - name: Checkout code
+        uses: captainhook23.github.io
 
       # Schritt 2: Pandoc installieren
       - name: Install pandoc
