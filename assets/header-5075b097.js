@@ -1,0 +1,1 @@
+import{z as s}from"./index-2c8e25d6.js";class r extends s{config(){const{getLang:e,setLang:a}=this.app.getService("locale");var t={cols:[{type:"header",template:this.app.config.name,css:"webix_header app_header",width:200},{},{view:"segmented",options:["en","de"],value:e(),width:200,on:{onChange:n=>a(n)}}]};return{rows:[t]}}init(){}}export{r as default};
