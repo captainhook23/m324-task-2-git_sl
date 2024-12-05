@@ -27,8 +27,8 @@ jobs:
       # Schritt 4: Änderungen commiten und pushen
       - name: Commit and push changes
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "Sven Lussmann"
+          git config --global user.email "sven.lussmann@gmail.com"
           git add test.html
           git commit -m "Automated update of test.html"
           git push
