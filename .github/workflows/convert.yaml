@@ -1,26 +1,26 @@
 name: Convert Markdown to HTML
 
-# Auslöser definieren (z. B. bei jedem Commit auf main oder wenn README.md geändert wird)
 on:
   push:
     paths:
-      - "README.md" # Reagiert nur, wenn README.md geändert wird
-  workflow_dispatch: # Ermöglicht manuelle Ausführung
+      - "README.md"
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Schritt 1: Repository klonen
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      # Schritt 1: Git-Repository klonen ohne externe Action
+      - name: Checkout Repository
+        run: |
+          git clone https://github.com/captainhook23/captainhook23.github.io.git .
+      
       # Schritt 2: Pandoc installieren
       - name: Install pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
 
-      # Schritt 3: Markdown in HTML konvertieren
+      # Schritt 3: README.md in index.html konvertieren
       - name: Convert README.md to test.html
         run: pandoc README.md -o test.html
 
